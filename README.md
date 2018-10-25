@@ -30,17 +30,26 @@ Lotka-Volterra方程式の変形による魚種交代のシミュレーション
 
 ### 魚種1
 
+#### 摂餌なし
 ![](./images/0/alpha_merged_0.png)
+
+#### 摂餌あり
 ![](./images/1/alpha_merged_0.png)
 
 ### 魚種2
 
+#### 摂餌なし
 ![](./images/0/alpha_merged_1.png)
+
+#### 摂餌あり
 ![](./images/1/alpha_merged_1.png)
 
 ### 魚種3
 
+#### 摂餌なし
 ![](./images/0/alpha_merged_2.png)
+
+#### 摂餌あり
 ![](./images/1/alpha_merged_2.png)
 
 ### 個体数最低値の分布
