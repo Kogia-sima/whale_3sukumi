@@ -56,8 +56,16 @@ Lotka-Volterra方程式の変形による魚種交代のシミュレーション
 
 各シミュレーションにおいて、tを0から150まで動かした時に個体数が最低になった時の値をプロットした。
 
+#### 魚種1
+
 ![](./images/compare_results/compare_0.png)
+
+#### 魚種2
+
 ![](./images/compare_results/compare_1.png)
+
+#### 魚種3
+
 ![](./images/compare_results/compare_2.png)
 
 
