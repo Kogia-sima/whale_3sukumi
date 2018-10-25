@@ -33,6 +33,8 @@ def alpha_merged(output_file: str, populations: np.ndarray) -> None:
     for population in populations:
         plt.plot(population, alpha=0.5)
 
+    plt.xlabel('t')
+    plt.ylabel('population')
     plt.ylim(0.0, np.max(populations) * 1.01)
     plt.savefig(output_file, dpi=300)
     plt.clf()
