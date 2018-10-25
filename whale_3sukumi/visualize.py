@@ -25,7 +25,7 @@ def single_result(output_file: str, populations: np.ndarray) -> None:
 
     plt.ylim(0.0, np.max(populations) * 1.01)
 
-    plt.savefig(output_file)
+    plt.savefig(output_file, dpi=300)
     plt.clf()
 
 
@@ -34,7 +34,7 @@ def alpha_merged(output_file: str, populations: np.ndarray) -> None:
         plt.plot(population, alpha=0.5)
 
     plt.ylim(0.0, np.max(populations) * 1.01)
-    plt.savefig(output_file)
+    plt.savefig(output_file, dpi=300)
     plt.clf()
 
 
