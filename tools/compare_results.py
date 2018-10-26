@@ -16,28 +16,25 @@ mpl.rcParams['ytick.color'] = '#000000'
 mpl.rcParams['legend.facecolor'] = '#ffffff'
 mpl.rcParams['lines.linewidth'] = 0.8
 
-DATA_FILES = ['output/0/data.npy', 'output/1/data.npy']
+DATA_FILES = ['../whale_3sukumi/output/0/data.npy',
+              '../whale_3sukumi/output/1/data.npy',
+              '../whale_3sukumi/output/2/data.npy']
 
 
 def main() -> None:
-    data_0 = np.load(DATA_FILES[0])
-    data_1 = np.load(DATA_FILES[1])
+    all_data = [np.load(f) for f in DATA_FILES]
 
-    data_0_mins = np.min(data_0, axis=1)
-    data_1_mins = np.min(data_1, axis=1)
-
-    output_dir = 'output/compare_results'
+    output_dir = '../whale_3sukumi/output/compare_results'
     os.makedirs(output_dir, exist_ok=True)
 
     for i in range(3):
         output_file = os.path.join(output_dir, 'compare_{}.png'.format(i))
 
-        data_0_min = data_0_mins[:, i]
-        data_1_min = data_1_mins[:, i]
+        each_mins = [np.min(data[:, :, i], axis=1) for data in all_data]
 
         ax = plt.gca()
-        ax.boxplot([data_0_min, data_1_min])
-        ax.set_xticklabels(['without consumption', 'with consumption'])
+        ax.boxplot(each_mins)
+        ax.set_xticklabels(['w=0.0', 'w=0.1', 'w=0.2'])
 
         plt.ylim([0, None])
         plt.ylabel('minimum population')
